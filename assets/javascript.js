@@ -14,21 +14,18 @@ $('.block').each( function(){
 
     //sets colors
     if(blockTime < current_hour){
-        console.log('past')
         $(this).addClass('past')
         $(this).removeClass('present')
         $(this).removeClass('future')
     }
 
     if(blockTime > current_hour){
-        console.log('future')
         $(this).addClass('future')
         $(this).removeClass('present')
         $(this).removeClass('past')
     }
 
     if(blockTime == current_hour){
-        console.log('present')
         $(this).addClass('present')
         $(this).removeClass('past')
         $(this).removeClass('future')
@@ -37,6 +34,7 @@ $('.block').each( function(){
 
 //saves to local on click
 $('.saveBtn').on('click', function(){
+    console.log('clicked')
     txt = $(this).parent().children().eq(1)
     localStorage.setItem(txt.attr('time'), txt.val())
 })
